@@ -6,7 +6,6 @@ for i in mysql mongodb catalogue cart user shipping payment web dispatch rabbitm
 ```
 docker pull redis
 ```
-
 ```
 docker compose up -d
 ```
