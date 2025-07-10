@@ -1,7 +1,7 @@
 ## Installing Roboshop Docker:
 
 ```
-for i in mysql mongodb catalogue cart user shipping payment web dispatch rabbitmq; do cd $i ; docker build -t $i:v1 . ; cd ..; done
+for i in mysql mongodb rabbitmq catalogue cart user shipping payment web dispatch web; do cd $i ; docker build -t $i:v1 . ; cd ..; done
 ```
 ```
 docker pull redis
@@ -25,3 +25,4 @@ docker run -d -p 8084:8080 --ulimit nofile=65536:65536 --name shipping --network
 docker run -d -p 8085:8080 --name payment --network roboshop payment:v1
 docker run -d -p 80:80 --name web --network roboshop web:v1
 docker run -d -p 8086:8080 --name dispatch --network roboshop dispatch:v1
+docker run -d -p 81:81 --name debug --network roboshop debug:v1
