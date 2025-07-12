@@ -109,3 +109,9 @@ services:
     image: dispatch:v1
     depends_on:
     - rabbitmq
+
+  debug:
+    container_name: debug
+    image: debug:v1
+    depends_on:
+    - web
